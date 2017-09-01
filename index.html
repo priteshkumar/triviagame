@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TriviaGame</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style>
+ body{
+  background-image: url("./giphy.gif");
+  color:green;
+ }
+
+.container{
+  background:black;
+
+}
+.jumbotron{
+  background: yellow;
+  color:blue;
+  border-bottom:none;
+}
+h1{
+  color:blue;
+  font-size:60px;
+}
+#maincontainer{
+
+	margin-top:30px;
+	margin-bottom: 30px;
+	border:2px solid white;
+	padding-bottom: 30px;
+}
+#query{
+padding-bottom:10px;
+padding-top:10px;
+
+}
+#startbtn{
+	margin-top:100px;
+}
+button{
+	width:200px;
+	height:50px;
+	
+}
+label{
+  font-size: 16px;
+}
+#timestats{
+  margin-bottom: 30px;
+}
+</style>
+</head>
+<body>
+
+<div id="maincontainer" class="container">
+<div class="row">
+<div class="col-xs-12 text-center">
+<h1>Totally Trivial Trivia</h1>
+</div>
+</div>
+<div id="startbtn" class="row">
+<div class="col-xs-12 text-center">
+<button class="btn btn-primary">Start Game</button>
+</div>
+</div>
+<div id="timestats" class="row hidden">
+<div class="col-xs-12 text-center">
+<h3 id="timereport">
+Time Remaining: 30 seconds</h3></div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>What is the number of bits in one Byte?</h3>
+  <form id="Four">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Four">4
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Eight">8
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Sixteen">16
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Thirtytwo">32
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Which of the below is an operating system?</h3>
+  <form id="Javascript">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Javascript">Javascript
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Unix">Unix
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="SQL">SQL
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Hadoop">Hadoop
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Choose an object oriented programming language from below?</h3>
+  <form id="Python">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="C">C
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="MySql">MySql
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Python">Python
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="CSS3">CSS3
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Who invented the Javascript language,can you guess from below?</h3>
+  <form id="BrendanEich">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="BrendanEich">BrendanEich
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="ZeevJuraski">ZeevJuraski
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="RichardStallman">RichardStallman
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="DennisRitchie">DennisRitchie
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Which is the keyword to declare a variable in Javascript?</h3>
+  <form id="var">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="var">var
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Inputvar">Inputvar
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Object">Object
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="closure">closure
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>What is CSS used for when developing websites?</h3>
+  <form id="Styling">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="functionality">funtionality
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="htmlelements">HTML elements
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Styling">Styling
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Databaseaccess">Database access
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>What is the main algorithm powering google search engine?</h3>
+  <form id="Pagerank">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Pagerank">Pagerank
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Hilltop">Hilltop
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="deeplearning">Deep Learning
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="Hamiltoniancycle">Hamiltonian Cycle
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Which of the following is not an HTML element</h3>
+  <form id="tsection">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="img">img
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="div">div
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="aside">aside
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="tsection">tsection
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Which from the below properties is used to set font color of a div element?</h3>
+  <form id="color">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="color">color
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="background-color">background-color
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="font-weight">font-weight
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="font-transform">font-transform
+    </label>
+  </form>
+</div>
+</div>
+<div  class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Who invented Python programming language any guesses?</h3>
+  <form id="GuidovanRossum">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="TimBernersLee">TimBernersLee
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="GuidovanRossum">GuidovanRossum
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="RyanDahl">RyanDahl
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="DonaldKnuth">DonaldKnuth
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>What is ajax technology used for in the javascript world?</h3>
+  <form id="querybackend">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="querybackend">Querying backend
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="addingdelay">Adding delay
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="animation">Animation
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="dom-manipulation">dom-manipulation
+    </label>
+  </form>
+</div>
+</div>
+
+</div>
+
+<script>
+var triviaOb = {
+	"gameStarted":false,
+	"gameQuestions":[],
+	"correctAnswers":0,
+	"incorrectAnswers":0,
+  "unanswered":11,
+	"timeExpired":false,
+	"tCounter":30,
+	"intervalId":null,
+	setupTimer:function(){
+		this.intervalId = setInterval(this.updateTime,1000);
+	},
+  resetGame: function(){
+    this.gameStarted = false;
+    this.correctAnswers = 0;
+    this.incorrectAnswers = 0;
+    this.unanswered = 11;
+    this.tCounter = 30;
+    this.intervalId = null;
+  },
+	updateTime:function(){
+		    //console.log(triviaOb.tCounter);
+		  console.log("increment timer by 1 second");
+			triviaOb.tCounter= triviaOb.tCounter - 1;
+			if(triviaOb.tCounter > 0){
+					$("#timereport").html("Time Remaining:  " + triviaOb.tCounter + " seconds");
+			}
+			else{
+				clearInterval(triviaOb.intervalId);
+				triviaOb.displayResults();
+        triviaOb.resetGame();
+			}
+	},
+	displayResults:function(){
+		console.log("gameresults");
+    $("#timestats").addClass("hidden");
+    $(".query").each(function(){
+       $(this).addClass("hidden");
+    });
+
+    var $resdiv = $("<div>");
+    $resdiv.addClass("row");
+    $resdiv.html("<div " + "class=col-xs-12 text-center" + ">" + "<h3 " + "class=text-center>"  +
+                   "CorrectAnswers: " +
+                   triviaOb.correctAnswers + "</h3>" + "<h3 " + "class=text-center>" + "Wronganswers: " + 
+                   triviaOb.incorrectAnswers + "</h3>" + 
+                   "<h3 " + "class=text-center>" + "Total unanswered: " + triviaOb.unanswered + "</h3>" + "</div>");
+
+    $("#maincontainer").append($resdiv);
+    clearInterval(triviaOb.intervalId);
+
+
+		//var $querydiv = $(".query");
+    
+	}
+};
+ $("#startbtn").on("click",function(){
+ 		$(this).addClass("hidden");
+ 		$("#timestats").removeClass("hidden");
+ 		triviaOb.setupTimer();
+ 		var $querydivs = $(".query");
+ 		$querydivs.each(function(){
+          $(this).removeClass("hidden");
+          $(this).css("margin-bottom","20px");
+ 		});
+ 		$(this).addClass("hidden");
+ 		
+ });
+
+ $("form input:radio").on("click",function(){
+  console.log("radioclicked");
+  console.log($(this).val());
+  console.log($(this).parent().parent());
+  if($(this).parent().parent().attr("id") == $(this).val()){
+    console.log("correctAnswer");
+    triviaOb.correctAnswers = triviaOb.correctAnswers + 1;
+    triviaOb.unanswered = triviaOb.unanswered -1;
+  }
+  else{
+    console.log("incorrectAnswer");
+    triviaOb.incorrectAnswers = triviaOb.incorrectAnswers + 1;
+    triviaOb.unanswered = triviaOb.unanswered -1;
+  }
+  if(triviaOb.unanswered == 0){
+    console.log("displayresults");
+    triviaOb.displayResults();
+  }
+ });
+</script>
+</body>
+</html>
