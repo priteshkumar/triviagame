@@ -11,19 +11,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 <style>
  body{
-  background-image: url("./giphy.gif");
+  background-image: url("./assets/images/giphy.gif");
   color:green;
+
  }
 
 .container{
-  background:black;
+  background: black;
 
 }
-.jumbotron{
-  background: yellow;
-  color:blue;
-  border-bottom:none;
-}
+
 h1{
   color:blue;
   font-size:60px;
@@ -34,10 +31,14 @@ h1{
 	margin-bottom: 30px;
 	border:2px solid white;
 	padding-bottom: 30px;
+  	border-radius:25px 25px;
+
 }
 #query{
-padding-bottom:10px;
-padding-top:10px;
+font-family: sans-serif;
+padding-bottom:15px;
+padding-top:20px;
+margin-bottom: 30px;
 
 }
 #startbtn{
@@ -54,6 +55,20 @@ label{
 #timestats{
   margin-bottom: 30px;
 }
+#donebtncont{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+div > h3{
+  width:60%; 
+  margin-left:auto;
+  margin-right: auto;
+}
+div form{
+  width:60%;
+  margin-left:auto;
+  margin-right: auto;
+}
 </style>
 </head>
 <body>
@@ -61,7 +76,7 @@ label{
 <div id="maincontainer" class="container">
 <div class="row">
 <div class="col-xs-12 text-center">
-<h1>Totally Trivial Trivia</h1>
+<h1>Totally Trivial Trivia!!</h1>
 </div>
 </div>
 <div id="startbtn" class="row">
@@ -96,7 +111,7 @@ Time Remaining: 30 seconds</h3></div>
 <div class="row hidden query">
 <div class="col-xs-12 text-center">
   <h3>Which of the below is an operating system?</h3>
-  <form id="Javascript">
+  <form id="Unix">
     <label class="radio-inline">
       <input type="radio" name="optradio" value="Javascript">Javascript
     </label>
@@ -153,9 +168,9 @@ Time Remaining: 30 seconds</h3></div>
 <div class="row hidden query">
 <div class="col-xs-12 text-center">
   <h3>Which is the keyword to declare a variable in Javascript?</h3>
-  <form id="var">
+  <form id="vari">
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="var">var
+      <input type="radio" name="optradio" value="vari">Var
     </label>
     <label class="radio-inline">
       <input type="radio" name="optradio" value="Inputvar">Inputvar
@@ -164,7 +179,7 @@ Time Remaining: 30 seconds</h3></div>
       <input type="radio" name="optradio" value="Object">Object
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="closure">closure
+      <input type="radio" name="optradio" value="closure">Closure
     </label>
   </form>
 </div>
@@ -174,7 +189,7 @@ Time Remaining: 30 seconds</h3></div>
   <h3>What is CSS used for when developing websites?</h3>
   <form id="Styling">
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="functionality">funtionality
+      <input type="radio" name="optradio" value="functionality">Funtionality
     </label>
     <label class="radio-inline">
       <input type="radio" name="optradio" value="htmlelements">HTML elements
@@ -209,19 +224,19 @@ Time Remaining: 30 seconds</h3></div>
 </div>
 <div class="row hidden query">
 <div class="col-xs-12 text-center">
-  <h3>Which of the following is not an HTML element</h3>
+  <h3>Which of the following is not an HTML element?</h3>
   <form id="tsection">
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="img">img
+      <input type="radio" name="optradio" value="img">Img
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="div">div
+      <input type="radio" name="optradio" value="div">Div
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="aside">aside
+      <input type="radio" name="optradio" value="aside">Aside
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="tsection">tsection
+      <input type="radio" name="optradio" value="tsection">Tsection
     </label>
   </form>
 </div>
@@ -231,16 +246,16 @@ Time Remaining: 30 seconds</h3></div>
   <h3>Which from the below properties is used to set font color of a div element?</h3>
   <form id="color">
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="color">color
+      <input type="radio" name="optradio" value="color">Color
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="background-color">background-color
+      <input type="radio" name="optradio" value="background-color">Background-color
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="font-weight">font-weight
+      <input type="radio" name="optradio" value="font-weight">Font-weight
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="font-transform">font-transform
+      <input type="radio" name="optradio" value="font-transform">Font-transform
     </label>
   </form>
 </div>
@@ -278,103 +293,75 @@ Time Remaining: 30 seconds</h3></div>
       <input type="radio" name="optradio" value="animation">Animation
     </label>
     <label class="radio-inline">
-      <input type="radio" name="optradio" value="dom-manipulation">dom-manipulation
+      <input type="radio" name="optradio" value="dom-manipulation">Dom-manipulation
     </label>
   </form>
 </div>
 </div>
-
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Which of these is not a web backend programming language?</h3>
+  <form id="webackend">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="nodejs">Nodejs
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="pyth">Python
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="webackend">Jquery
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="java">Java
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>What is the underlying application protocol for AJAX?</h3>
+  <form id="htp">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="htp">HTTP
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="udp">UDP
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="rtp">RTP
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="rtsp">RTSP
+    </label>
+  </form>
+</div>
+</div>
+<div class="row hidden query">
+<div class="col-xs-12 text-center">
+  <h3>Which of the following is not a javascript framework?</h3>
+  <form id="spring">
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="ember">Emberjs
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="react">Reactjs
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="knockout">Knockoutjs
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="optradio" value="spring">Spring
+    </label>
+  </form>
+</div>
+</div>
+<div id="donebtncont" class="row hidden">
+<div class="col-xs-12 text-center">
+<button id="donebtn" class="btn btn-primary">Done</button>
+</div>
+</div>
 </div>
 
-<script>
-var triviaOb = {
-	"gameStarted":false,
-	"gameQuestions":[],
-	"correctAnswers":0,
-	"incorrectAnswers":0,
-  "unanswered":11,
-	"timeExpired":false,
-	"tCounter":30,
-	"intervalId":null,
-	setupTimer:function(){
-		this.intervalId = setInterval(this.updateTime,1000);
-	},
-  resetGame: function(){
-    this.gameStarted = false;
-    this.correctAnswers = 0;
-    this.incorrectAnswers = 0;
-    this.unanswered = 11;
-    this.tCounter = 30;
-    this.intervalId = null;
-  },
-	updateTime:function(){
-		    //console.log(triviaOb.tCounter);
-		  console.log("increment timer by 1 second");
-			triviaOb.tCounter= triviaOb.tCounter - 1;
-			if(triviaOb.tCounter > 0){
-					$("#timereport").html("Time Remaining:  " + triviaOb.tCounter + " seconds");
-			}
-			else{
-				clearInterval(triviaOb.intervalId);
-				triviaOb.displayResults();
-        triviaOb.resetGame();
-			}
-	},
-	displayResults:function(){
-		console.log("gameresults");
-    $("#timestats").addClass("hidden");
-    $(".query").each(function(){
-       $(this).addClass("hidden");
-    });
-
-    var $resdiv = $("<div>");
-    $resdiv.addClass("row");
-    $resdiv.html("<div " + "class=col-xs-12 text-center" + ">" + "<h3 " + "class=text-center>"  +
-                   "CorrectAnswers: " +
-                   triviaOb.correctAnswers + "</h3>" + "<h3 " + "class=text-center>" + "Wronganswers: " + 
-                   triviaOb.incorrectAnswers + "</h3>" + 
-                   "<h3 " + "class=text-center>" + "Total unanswered: " + triviaOb.unanswered + "</h3>" + "</div>");
-
-    $("#maincontainer").append($resdiv);
-    clearInterval(triviaOb.intervalId);
-
-
-		//var $querydiv = $(".query");
-    
-	}
-};
- $("#startbtn").on("click",function(){
- 		$(this).addClass("hidden");
- 		$("#timestats").removeClass("hidden");
- 		triviaOb.setupTimer();
- 		var $querydivs = $(".query");
- 		$querydivs.each(function(){
-          $(this).removeClass("hidden");
-          $(this).css("margin-bottom","20px");
- 		});
- 		$(this).addClass("hidden");
- 		
- });
-
- $("form input:radio").on("click",function(){
-  console.log("radioclicked");
-  console.log($(this).val());
-  console.log($(this).parent().parent());
-  if($(this).parent().parent().attr("id") == $(this).val()){
-    console.log("correctAnswer");
-    triviaOb.correctAnswers = triviaOb.correctAnswers + 1;
-    triviaOb.unanswered = triviaOb.unanswered -1;
-  }
-  else{
-    console.log("incorrectAnswer");
-    triviaOb.incorrectAnswers = triviaOb.incorrectAnswers + 1;
-    triviaOb.unanswered = triviaOb.unanswered -1;
-  }
-  if(triviaOb.unanswered == 0){
-    console.log("displayresults");
-    triviaOb.displayResults();
-  }
- });
-</script>
+<script src="./assets/js/trivia.js"></script>
 </body>
 </html>
